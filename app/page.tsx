@@ -4,6 +4,7 @@ import { getHome, getProducts, getSettings } from "@/lib/content";
 import { themeTokens } from "@/lib/productTheme";
 import Media from "@/components/Media";
 import Marquee from "@/components/Marquee";
+import HeroFoliage from "@/components/HeroFoliage";
 import IntroOverlay from "@/components/IntroOverlay";
 import HomeFx from "@/components/HomeFx";
 
@@ -145,6 +146,7 @@ export default async function HomePage() {
             pointerEvents: "none",
           }}
         />
+        <HeroFoliage />
         <canvas id="heroCanvas" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 1, pointerEvents: "none" }} />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1500, margin: "0 auto", width: "100%" }}>
