@@ -1,0 +1,54 @@
+heroEyebrow: "Est. Colombo, Sri Lanka · Software & Applied AI Research"
+heroLine1: Native to
+heroLine1Accent: the canopy.
+heroLine2: Built for
+heroLine2Accent: the wild.
+heroSubtitle: >-
+  A Sri Lankan software agency turning founders' ideas into research-grade
+  products — moving between legacy systems and greenfield AI like a langur
+  through the branches.
+heroCta: Start a project
+marquee:
+  - Digital Transformation
+  - AI-Native Products
+  - Applied Research
+  - Founder Support
+aboutStatement: >-
+  We're a research-grounded studio. Our work is submitted to ISPASS, MDPI, and
+  IEEE — venues that force our engineering to hold up to peer review, not just
+  client sign-off. That discipline shows up in everything we ship.
+services:
+  - title: Founder Support
+    description: >-
+      From napkin sketch to shipped product — scoping, architecture, and
+      hands-on build partnership for early-stage founders.
+  - title: Digital Transformation
+    description: >-
+      Modernising legacy operations for established businesses — process
+      automation, data platforms, and internal tooling.
+  - title: AI-Native Product Development
+    description: >-
+      Products designed around AI from day one — not AI bolted onto an existing
+      product.
+  - title: AI Research & Development
+    description: >-
+      Applied research feeding directly back into client and in-house products —
+      published where it holds up: ISPASS, MDPI, IEEE.
+researchHeading: Engineering that survives peer review.
+researchIntro: >-
+  We're a studio that publishes, not just ships. Our applied research feeds
+  directly back into client and in-house products — and we submit it where it
+  has to hold up to reviewers, not just client sign-off.
+venues:
+  - name: ISPASS
+    description: >-
+      IEEE International Symposium on Performance Analysis of Systems and
+      Software — where systems and performance work is held to the numbers.
+  - name: MDPI
+    description: >-
+      Open-access, peer-reviewed journals — applied methods documented and
+      scrutinised in the open, not behind a slide deck.
+  - name: IEEE
+    description: >-
+      The standard for rigorous engineering research — the venue that forces our
+      choices to be defensible to a reviewer.

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salli — Case Study — Leaf Monkey Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Playfair+Display:ital,wght@1,400;1,500&family=Space+Mono:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <script src="./image-slot.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#F2ECDD;color:#2D4A34;font-family:'Lato',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    .mono{font-family:'Space Mono',monospace}
+    .serif{font-family:'Fraunces',serif}
+    .pf{font-family:'Playfair Display',serif;font-style:italic}
+    @keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-10%)}30%{transform:translate(3%,-15%)}50%{transform:translate(-8%,5%)}70%{transform:translate(9%,-4%)}90%{transform:translate(-3%,10%)}}
+    @keyframes floatUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+    .reveal{opacity:0}
+    .reveal.visible{animation:floatUp .9s cubic-bezier(.19,1,.22,1) forwards}
+    ::selection{background:#B8863B;color:#F2ECDD}
+    .navlink{position:relative}
+    .navlink::after{content:'';position:absolute;left:0;bottom:-4px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.19,1,.22,1)}
+    .navlink:hover::after{transform:scaleX(1);transform-origin:left}
+    image-slot{width:100%;height:100%;display:block}
+    @media(max-width:820px){nav{padding:16px 20px !important}#navlinks{gap:16px !important;font-size:10px !important}section,footer,.wrap{padding-left:22px !important;padding-right:22px !important}.two{grid-template-columns:1fr !important}.gallery{grid-template-columns:1fr !important}}
+    @media(max-width:560px){#navlinks{display:none !important}}
+  </style>
+</helmet>
+
+<div style="position:fixed;inset:-50%;z-index:9998;pointer-events:none;opacity:0.045;mix-blend-mode:multiply;animation:grain 8s steps(8) infinite;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:180;display:flex;justify-content:space-between;align-items:center;padding:22px 40px;background:rgba(242,236,221,0.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(45,74,52,0.08);">
+  <a href="Leaf%20Monkey%20Labs.dc.html" style="display:flex;align-items:baseline;gap:8px;color:#2D4A34;"><span class="serif" style="font-weight:500;font-size:17px;letter-spacing:-0.3px;">Leaf&nbsp;Monkey</span><span class="mono" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;opacity:.6;">Labs</span></a>
+  <div class="mono" id="navlinks" style="display:flex;gap:28px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#4A4844;">
+    <a href="Projects.dc.html" class="navlink" style="color:#B8863B;">Work</a>
+    <a href="Blog.dc.html" class="navlink">Insights</a>
+    <a href="About.dc.html" class="navlink">About</a>
+    <a href="Leaf%20Monkey%20Labs.dc.html#contact" class="navlink">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="wrap" style="padding:150px 40px 60px;max-width:1300px;margin:0 auto;width:100%;">
+  <div class="mono reveal" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5C4B3C;margin-bottom:40px;"><a href="Projects.dc.html" class="navlink">Work</a> &nbsp;/&nbsp; <span style="color:#B8863B;">Salli</span></div>
+  <span class="mono reveal" style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#B8863B;">Personal Finance &amp; Tax · Sri Lanka</span>
+  <h1 class="serif reveal" style="font-weight:300;font-size:clamp(56px,10vw,168px);line-height:0.92;letter-spacing:-0.04em;color:#2D4A34;margin:16px 0 28px;">Salli</h1>
+  <p class="reveal" style="font-size:clamp(18px,2vw,26px);line-height:1.5;color:#4A4844;max-width:680px;font-weight:300;">Making tax filing and money management <span class="pf" style="color:#5C4B3C;">legible</span> for individuals in Sri Lanka — not just spreadsheets pretending to be software.</p>
+</section>
+
+<!-- HERO IMAGE -->
+<section class="wrap" style="padding:0 40px;max-width:1300px;margin:0 auto 100px;width:100%;">
+  <div class="reveal" style="height:clamp(280px,52vh,560px);border-radius:22px;overflow:hidden;background:#E4D9BF;"><image-slot id="cs-hero" shape="rect" placeholder="Salli — hero / cover shot"></image-slot></div>
+  <div class="two" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px;border-top:1px solid rgba(45,74,52,0.15);padding-top:32px;">
+    <div class="reveal"><div class="mono" style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#5C4B3C;margin-bottom:8px;">Focus</div><div class="serif" style="font-size:20px;">Tax &amp; money</div></div>
+    <div class="reveal"><div class="mono" style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#5C4B3C;margin-bottom:8px;">Market</div><div class="serif" style="font-size:20px;">Sri Lanka</div></div>
+    <div class="reveal"><div class="mono" style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#5C4B3C;margin-bottom:8px;">Services</div><div class="serif" style="font-size:20px;">Product · AI</div></div>
+    <div class="reveal"><div class="mono" style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#5C4B3C;margin-bottom:8px;">Status</div><div class="serif" style="font-size:20px;">Live</div></div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="wrap two" style="padding:0 40px 100px;max-width:1300px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(40px,6vw,100px);">
+  <div><p class="mono reveal" style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#B8863B;">Overview</p></div>
+  <div>
+    <p class="serif reveal" style="font-weight:300;font-size:clamp(22px,2.6vw,36px);line-height:1.4;color:#2D4A34;">Filing tax in Sri Lanka meant wrestling forms, spreadsheets, and guesswork. Salli turns that into a guided, legible flow — money and tax that ordinary people can actually reason about.</p>
+  </div>
+</section>
+
+<!-- CHALLENGE / APPROACH / OUTCOME -->
+<section style="background:#2D4A34;color:#F2ECDD;padding:120px 40px;">
+  <div style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:rgba(242,236,221,0.12);border:1px solid rgba(242,236,221,0.12);border-radius:16px;overflow:hidden;">
+    <div class="reveal" style="background:#2D4A34;padding:48px 40px;">
+      <span class="mono" style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#B8863B;">The challenge</span>
+      <p style="font-size:16px;line-height:1.8;color:rgba(242,236,221,0.72);margin-top:20px;">Tax and personal finance tools in the market treated users like accountants. The product had to make filing understandable to someone doing it for the first time, in a local context most software ignores.</p>
+    </div>
+    <div class="reveal" style="background:#2D4A34;padding:48px 40px;">
+      <span class="mono" style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#B8863B;">The approach</span>
+      <p style="font-size:16px;line-height:1.8;color:rgba(242,236,221,0.72);margin-top:20px;">We scoped around real Sri Lankan filing scenarios, designed a guided flow over a rules engine, and layered AI assistance where it reduced confusion — not where it added novelty for its own sake.</p>
+    </div>
+    <div class="reveal" style="background:#2D4A34;padding:48px 40px;">
+      <span class="mono" style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#B8863B;">The outcome</span>
+      <p style="font-size:16px;line-height:1.8;color:rgba(242,236,221,0.72);margin-top:20px;">A live app that makes money and tax legible for individuals — grounded in local rules, defensible in its logic, and built to keep pace as regulations change.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="wrap" style="padding:120px 40px;max-width:1000px;margin:0 auto;text-align:center;">
+  <p class="serif reveal" style="font-weight:300;font-style:italic;font-size:clamp(26px,4vw,52px);line-height:1.35;letter-spacing:-0.01em;color:#2D4A34;">"Not just spreadsheets pretending to <span class="pf" style="color:#B8863B;">be software.</span>"</p>
+</section>
+
+<!-- GALLERY -->
+<section class="wrap" style="padding:0 40px 120px;max-width:1300px;margin:0 auto;width:100%;">
+  <p class="mono reveal" style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#B8863B;margin-bottom:32px;">Inside the product</p>
+  <div class="gallery" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+    <div class="reveal" style="height:clamp(260px,44vh,460px);border-radius:18px;overflow:hidden;background:#E4D9BF;"><image-slot id="cs-g1" shape="rect" placeholder="Salli — screen 1"></image-slot></div>
+    <div class="reveal" style="height:clamp(260px,44vh,460px);border-radius:18px;overflow:hidden;background:#E4D9BF;"><image-slot id="cs-g2" shape="rect" placeholder="Salli — screen 2"></image-slot></div>
+    <div class="reveal" style="grid-column:1 / -1;height:clamp(260px,50vh,520px);border-radius:18px;overflow:hidden;background:#E4D9BF;"><image-slot id="cs-g3" shape="rect" placeholder="Salli — wide screen / flow"></image-slot></div>
+  </div>
+</section>
+
+<!-- NEXT -->
+<section class="wrap" style="padding:0 40px 120px;max-width:1300px;margin:0 auto;width:100%;">
+  <a href="Projects.dc.html" class="reveal" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(45,74,52,0.15);border-bottom:1px solid rgba(45,74,52,0.15);padding:48px 4px;">
+    <div><span class="mono" style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#5C4B3C;">Next</span><div class="serif" style="font-weight:400;font-size:clamp(28px,4vw,56px);line-height:1;margin-top:10px;color:#2D4A34;">All work</div></div>
+    <span class="serif" style="font-size:40px;color:#B8863B;">→</span>
+  </a>
+</section>
+
+<footer style="background:#1C2E22;color:#F2ECDD;padding:120px 40px 44px;position:relative;overflow:hidden;">
+  <div style="position:absolute;bottom:-30%;left:50%;transform:translateX(-50%);width:90vw;height:60vw;max-height:480px;border-radius:50%;background:radial-gradient(circle,rgba(184,134,59,0.13),transparent 65%);pointer-events:none;"></div>
+  <div style="max-width:1300px;margin:0 auto;position:relative;z-index:2;">
+    <h2 class="serif reveal" style="font-weight:300;font-size:clamp(40px,6.5vw,104px);line-height:0.95;letter-spacing:-0.03em;margin-bottom:48px;">Building something<br/>similar? <span class="pf" style="color:#B8863B;">Let's talk.</span></h2>
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;align-items:flex-end;border-top:1px solid rgba(242,236,221,0.15);padding-top:40px;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <a href="mailto:hello@leafmonkeylabs.com" class="serif mag" style="font-size:clamp(22px,3vw,38px);font-weight:300;color:#F2ECDD;transition:transform .35s cubic-bezier(.19,1,.22,1);transform-origin:left;display:inline-block;">hello@leafmonkeylabs.com</a>
+        <a href="https://leafmonkeylabs.com" class="mono navlink" style="font-size:13px;letter-spacing:0.1em;color:rgba(242,236,221,0.6);width:fit-content;">leafmonkeylabs.com ↗</a>
+      </div>
+      <div class="mono" style="text-align:right;font-size:12px;letter-spacing:0.08em;color:rgba(242,236,221,0.5);line-height:2;">COLOMBO, SRI LANKA<br/>DIGITAL · AI-NATIVE · RESEARCH<br/>ISPASS · MDPI · IEEE</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-top:64px;">
+      <div style="display:flex;align-items:baseline;gap:8px;"><span class="serif" style="font-weight:500;font-size:16px;">Leaf Monkey</span><span class="mono" style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;opacity:.6;">Labs</span></div>
+      <p class="mono" style="font-size:10px;letter-spacing:0.1em;color:rgba(242,236,221,0.3);">© 2026 — NATIVE TO THE CANOPY, BUILT FOR THE WILD</p>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+    const io = new IntersectionObserver((es) => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    $$('.reveal').forEach(el => io.observe(el));
+    $$('.mag').forEach(el => {
+      el.addEventListener('mouseenter', () => el.style.transform = 'translateX(12px)');
+      el.addEventListener('mouseleave', () => el.style.transform = 'translateX(0)');
+    });
+  }
+}
+
+</script>
+</body>
+</html>

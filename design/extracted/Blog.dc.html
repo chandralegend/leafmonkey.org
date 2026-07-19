@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Insights — Leaf Monkey Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Playfair+Display:ital,wght@1,400;1,500&family=Space+Mono:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <script src="./image-slot.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#F2ECDD;color:#2D4A34;font-family:'Lato',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    .mono{font-family:'Space Mono',monospace}
+    .serif{font-family:'Fraunces',serif}
+    .pf{font-family:'Playfair Display',serif;font-style:italic}
+    @keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-10%)}30%{transform:translate(3%,-15%)}50%{transform:translate(-8%,5%)}70%{transform:translate(9%,-4%)}90%{transform:translate(-3%,10%)}}
+    @keyframes floatUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+    .reveal{opacity:0}
+    .reveal.visible{animation:floatUp .9s cubic-bezier(.19,1,.22,1) forwards}
+    ::selection{background:#B8863B;color:#F2ECDD}
+    .navlink{position:relative}
+    .navlink::after{content:'';position:absolute;left:0;bottom:-4px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.19,1,.22,1)}
+    .navlink:hover::after{transform:scaleX(1);transform-origin:left}
+    image-slot{width:100%;height:100%;display:block}
+    .post:hover .post-img{transform:scale(1.05)}
+    .post:hover .post-title{color:#B8863B}
+    .post-title{transition:color .3s}
+    @media(max-width:820px){nav{padding:16px 20px !important}#navlinks{gap:16px !important;font-size:10px !important}section,footer{padding-left:22px !important;padding-right:22px !important}.feat{grid-template-columns:1fr !important}.posts{grid-template-columns:1fr !important}}
+    @media(max-width:560px){#navlinks{display:none !important}}
+  </style>
+</helmet>
+
+<div style="position:fixed;inset:-50%;z-index:9998;pointer-events:none;opacity:0.045;mix-blend-mode:multiply;animation:grain 8s steps(8) infinite;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:180;display:flex;justify-content:space-between;align-items:center;padding:22px 40px;background:rgba(242,236,221,0.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(45,74,52,0.08);">
+  <a href="Leaf%20Monkey%20Labs.dc.html" style="display:flex;align-items:baseline;gap:8px;color:#2D4A34;"><span class="serif" style="font-weight:500;font-size:17px;letter-spacing:-0.3px;">Leaf&nbsp;Monkey</span><span class="mono" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;opacity:.6;">Labs</span></a>
+  <div class="mono" id="navlinks" style="display:flex;gap:28px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#4A4844;">
+    <a href="Projects.dc.html" class="navlink">Work</a>
+    <a href="Blog.dc.html" class="navlink" style="color:#B8863B;">Insights</a>
+    <a href="About.dc.html" class="navlink">About</a>
+    <a href="Leaf%20Monkey%20Labs.dc.html#contact" class="navlink">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="padding:180px 40px 70px;max-width:1300px;margin:0 auto;width:100%;">
+  <p class="mono reveal" style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#B8863B;margin-bottom:28px;">Insights</p>
+  <h1 class="serif reveal" style="font-weight:300;font-size:clamp(48px,8vw,128px);line-height:0.95;letter-spacing:-0.04em;color:#2D4A34;margin-bottom:32px;">Field notes from<br/>the <span class="pf" style="color:#B8863B;">canopy.</span></h1>
+  <p class="reveal" style="font-size:clamp(15px,1.4vw,18px);line-height:1.7;color:#4A4844;max-width:520px;">On research-grade engineering, AI-native product design, and building software that's proudly, specifically Sri Lankan.</p>
+</section>
+
+<!-- FEATURED -->
+<section style="padding:0 40px 90px;max-width:1300px;margin:0 auto;width:100%;">
+  <a href="Blog%20Post.dc.html" class="post reveal" style="display:block;">
+    <div class="feat" style="display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(28px,4vw,56px);align-items:center;background:#2D4A34;color:#F2ECDD;border-radius:22px;overflow:hidden;">
+      <div style="position:relative;min-height:360px;overflow:hidden;"><div class="post-img" style="position:absolute;inset:0;transition:transform .7s cubic-bezier(.19,1,.22,1);"><image-slot id="blog-feat" shape="rect" src="https://images.unsplash.com/photo-1758995017474-8a9b71604016?w=1400&amp;q=80&amp;auto=format&amp;fit=crop" credit="Photo by Gaurav Pandit on Unsplash" credit-href="https://unsplash.com/@gauravpandit007" placeholder="Featured cover"></image-slot></div></div>
+      <div style="padding:clamp(32px,4vw,56px) clamp(32px,4vw,56px) clamp(32px,4vw,56px) 0;">
+        <div class="mono" style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#B8863B;margin-bottom:20px;">Featured · Research</div>
+        <h2 class="serif post-title" style="font-weight:400;font-size:clamp(28px,3.4vw,50px);line-height:1.05;margin-bottom:20px;">Why we submit our engineering to peer review</h2>
+        <p style="font-size:16px;line-height:1.7;color:rgba(242,236,221,0.7);margin-bottom:28px;max-width:460px;">Client sign-off is a low bar. Here's why we put our work in front of ISPASS, MDPI, and IEEE reviewers — and what that discipline does to the products we ship.</p>
+        <span class="mono" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(242,236,221,0.55);">8 min read</span>
+      </div>
+    </div>
+  </a>
+</section>
+
+<!-- POSTS GRID -->
+<section style="padding:0 40px 120px;max-width:1300px;margin:0 auto;width:100%;">
+  <div class="posts" style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px 28px;">
+
+    <a href="Blog%20Post.dc.html" class="post reveal" style="display:block;">
+      <div style="position:relative;height:220px;border-radius:16px;overflow:hidden;background:#E4D9BF;margin-bottom:22px;"><div class="post-img" style="position:absolute;inset:0;transition:transform .7s cubic-bezier(.19,1,.22,1);"><image-slot id="blog-1" shape="rect" placeholder="Cover — AI-native"></image-slot></div></div>
+      <div class="mono" style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#B8863B;margin-bottom:12px;">AI-Native · 6 min</div>
+      <h3 class="serif post-title" style="font-weight:400;font-size:26px;line-height:1.15;margin-bottom:12px;">Building AI-native, not AI bolted on</h3>
+      <p style="font-size:15px;line-height:1.65;color:#4A4844;">Designing a product around AI from day one changes the architecture, the data, and the questions you ask first.</p>
+    </a>
+
+    <a href="Blog%20Post.dc.html" class="post reveal" style="display:block;">
+      <div style="position:relative;height:220px;border-radius:16px;overflow:hidden;background:#E4D9BF;margin-bottom:22px;"><div class="post-img" style="position:absolute;inset:0;transition:transform .7s cubic-bezier(.19,1,.22,1);"><image-slot id="blog-2" shape="rect" placeholder="Cover — Salli"></image-slot></div></div>
+      <div class="mono" style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#B8863B;margin-bottom:12px;">Fintech · 5 min</div>
+      <h3 class="serif post-title" style="font-weight:400;font-size:26px;line-height:1.15;margin-bottom:12px;">Making Sri Lankan tax legible</h3>
+      <p style="font-size:15px;line-height:1.65;color:#4A4844;">Lessons from Salli on turning opaque local rules into a flow ordinary people can reason about.</p>
+    </a>
+
+    <a href="Blog%20Post.dc.html" class="post reveal" style="display:block;">
+      <div style="position:relative;height:220px;border-radius:16px;overflow:hidden;background:#E4D9BF;margin-bottom:22px;"><div class="post-img" style="position:absolute;inset:0;transition:transform .7s cubic-bezier(.19,1,.22,1);"><image-slot id="blog-3" shape="rect" placeholder="Cover — Katha"></image-slot></div></div>
+      <div class="mono" style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#B8863B;margin-bottom:12px;">AI-Native · 7 min</div>
+      <h3 class="serif post-title" style="font-weight:400;font-size:26px;line-height:1.15;margin-bottom:12px;">Translation isn't understanding</h3>
+      <p style="font-size:15px;line-height:1.65;color:#4A4844;">Designing Katha meant going past literal translation to the meaning that slips between languages.</p>
+    </a>
+
+    <a href="Blog%20Post.dc.html" class="post reveal" style="display:block;">
+      <div style="position:relative;height:220px;border-radius:16px;overflow:hidden;background:#E4D9BF;margin-bottom:22px;"><div class="post-img" style="position:absolute;inset:0;transition:transform .7s cubic-bezier(.19,1,.22,1);"><image-slot id="blog-4" shape="rect" placeholder="Cover — transformation"></image-slot></div></div>
+      <div class="mono" style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#B8863B;margin-bottom:12px;">Transformation · 6 min</div>
+      <h3 class="serif post-title" style="font-weight:400;font-size:26px;line-height:1.15;margin-bottom:12px;">Modernise without the rebuild theatre</h3>
+      <p style="font-size:15px;line-height:1.65;color:#4A4844;">Most legacy systems don't need a rewrite. They need the right seams cut and the right tooling around them.</p>
+    </a>
+
+    <a href="Blog%20Post.dc.html" class="post reveal" style="display:block;">
+      <div style="position:relative;height:220px;border-radius:16px;overflow:hidden;background:#E4D9BF;margin-bottom:22px;"><div class="post-img" style="position:absolute;inset:0;transition:transform .7s cubic-bezier(.19,1,.22,1);"><image-slot id="blog-5" shape="rect" placeholder="Cover — langur"></image-slot></div></div>
+      <div class="mono" style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#B8863B;margin-bottom:12px;">Culture · 4 min</div>
+      <h3 class="serif post-title" style="font-weight:400;font-size:26px;line-height:1.15;margin-bottom:12px;">What the langur taught us about systems</h3>
+      <p style="font-size:15px;line-height:1.65;color:#4A4844;">Moving fluently between layers of the canopy is a good model for moving between legacy and greenfield.</p>
+    </a>
+
+    <a href="Blog%20Post.dc.html" class="post reveal" style="display:block;">
+      <div style="position:relative;height:220px;border-radius:16px;overflow:hidden;background:#E4D9BF;margin-bottom:22px;"><div class="post-img" style="position:absolute;inset:0;transition:transform .7s cubic-bezier(.19,1,.22,1);"><image-slot id="blog-6" shape="rect" placeholder="Cover — founders"></image-slot></div></div>
+      <div class="mono" style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#B8863B;margin-bottom:12px;">Founders · 5 min</div>
+      <h3 class="serif post-title" style="font-weight:400;font-size:26px;line-height:1.15;margin-bottom:12px;">From napkin sketch to shipped product</h3>
+      <p style="font-size:15px;line-height:1.65;color:#4A4844;">What we do in the first four weeks with an early-stage founder — and why we tell you what your idea actually needs.</p>
+    </a>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section style="padding:0 40px 120px;max-width:1300px;margin:0 auto;width:100%;">
+  <div class="reveal" style="background:#20160A;color:#F2ECDD;border-radius:22px;padding:clamp(40px,6vw,88px);text-align:center;">
+    <div class="mono" style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#B8863B;margin-bottom:24px;">The dispatch</div>
+    <h2 class="serif" style="font-weight:300;font-size:clamp(28px,4vw,56px);line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px;">Notes from the studio,<br/>occasionally.</h2>
+    <p style="font-size:15px;line-height:1.7;color:rgba(242,236,221,0.6);max-width:440px;margin:0 auto 32px;">Research, product thinking, and the odd field note. No noise.</p>
+    <a href="mailto:hello@leafmonkeylabs.com?subject=Subscribe%20to%20the%20dispatch" class="mono mag" style="display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#20160A;background:#B8863B;padding:18px 32px;border-radius:100px;transition:transform .3s cubic-bezier(.19,1,.22,1);">Subscribe ↗</a>
+  </div>
+</section>
+
+<footer style="background:#1C2E22;color:#F2ECDD;padding:100px 40px 44px;position:relative;overflow:hidden;">
+  <div style="max-width:1300px;margin:0 auto;position:relative;z-index:2;">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;align-items:flex-end;border-top:1px solid rgba(242,236,221,0.15);padding-top:40px;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <a href="mailto:hello@leafmonkeylabs.com" class="serif mag" style="font-size:clamp(22px,3vw,38px);font-weight:300;color:#F2ECDD;transition:transform .35s cubic-bezier(.19,1,.22,1);transform-origin:left;display:inline-block;">hello@leafmonkeylabs.com</a>
+        <a href="https://leafmonkeylabs.com" class="mono navlink" style="font-size:13px;letter-spacing:0.1em;color:rgba(242,236,221,0.6);width:fit-content;">leafmonkeylabs.com ↗</a>
+      </div>
+      <div class="mono" style="text-align:right;font-size:12px;letter-spacing:0.08em;color:rgba(242,236,221,0.5);line-height:2;">COLOMBO, SRI LANKA<br/>DIGITAL · AI-NATIVE · RESEARCH<br/>ISPASS · MDPI · IEEE</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-top:64px;">
+      <div style="display:flex;align-items:baseline;gap:8px;"><span class="serif" style="font-weight:500;font-size:16px;">Leaf Monkey</span><span class="mono" style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;opacity:.6;">Labs</span></div>
+      <p class="mono" style="font-size:10px;letter-spacing:0.1em;color:rgba(242,236,221,0.3);">© 2026 — NATIVE TO THE CANOPY, BUILT FOR THE WILD</p>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+    const io = new IntersectionObserver((es) => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    $$('.reveal').forEach(el => io.observe(el));
+    $$('.mag').forEach(el => {
+      el.addEventListener('mouseenter', () => el.style.transform = 'translateX(12px)');
+      el.addEventListener('mouseleave', () => el.style.transform = 'translateX(0)');
+    });
+  }
+}
+
+</script>
+</body>
+</html>
