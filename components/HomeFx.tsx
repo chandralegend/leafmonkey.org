@@ -35,7 +35,8 @@ export default function HomeFx() {
       let W = 0,
         H = 0;
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const palette = ["rgba(184,134,59,", "rgba(45,74,52,", "rgba(92,75,60,"];
+      // light tones so the drifting leaves read over the dark video hero
+      const palette = ["rgba(242,236,221,", "rgba(232,200,137,", "rgba(184,134,59,"];
       type Leaf = {
         x: number; y: number; s: number; vy: number; vx: number;
         rot: number; vr: number; sway: number; sw: number; a: number; c: string;

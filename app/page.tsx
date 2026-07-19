@@ -4,11 +4,13 @@ import { getHome, getProducts, getSettings } from "@/lib/content";
 import { themeTokens } from "@/lib/productTheme";
 import Media from "@/components/Media";
 import Marquee from "@/components/Marquee";
-import HeroFoliage from "@/components/HeroFoliage";
+import HeroVideo from "@/components/HeroVideo";
 import IntroOverlay from "@/components/IntroOverlay";
 import HomeFx from "@/components/HomeFx";
 
 const STRATA = ["Emergent", "Canopy", "Understory", "Floor"];
+const HERO_POSTER =
+  "https://images.unsplash.com/photo-1764208637252-4cb59a64a674?w=1920&q=80&auto=format&fit=crop";
 
 export default async function HomePage() {
   const [home, products, settings] = await Promise.all([
@@ -78,7 +80,7 @@ export default async function HomePage() {
           padding: "22px 40px",
         }}
       >
-        <a href="#top" id="wordmark" style={{ display: "flex", alignItems: "baseline", gap: 8, color: "var(--canopy)" }}>
+        <a href="#top" id="wordmark" style={{ display: "flex", alignItems: "baseline", gap: 8, color: "var(--sand)" }}>
           <span className="serif" style={{ fontWeight: 500, fontSize: 17, letterSpacing: "-0.3px" }}>
             Leaf&nbsp;Monkey
           </span>
@@ -89,7 +91,7 @@ export default async function HomePage() {
         <div
           className="mono"
           id="navlinks"
-          style={{ display: "flex", gap: 26, fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--grey)" }}
+          style={{ display: "flex", gap: 26, fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--sand)" }}
         >
           <Link href="/work" className="navlink">Work</Link>
           <a href="#research" className="navlink">Research</a>
@@ -103,11 +105,11 @@ export default async function HomePage() {
       <section
         id="top"
         data-stratum="0"
-        data-navcolor="#2D4A34"
+        data-navcolor="#F2ECDD"
         style={{
           minHeight: "100svh",
           position: "relative",
-          background: "radial-gradient(120% 90% at 75% 15%, #F7F1E2 0%, #EFE7D3 55%, #E8DEC6 100%)",
+          background: "linear-gradient(160deg, #20160A 0%, #1C2E22 100%)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -115,6 +117,21 @@ export default async function HomePage() {
           overflow: "hidden",
         }}
       >
+        {/* video / poster backdrop */}
+        <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+          <HeroVideo poster={HERO_POSTER} />
+        </div>
+        {/* legibility overlay — darkens for text, deepens toward the marquee */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 1,
+            pointerEvents: "none",
+            background:
+              "linear-gradient(90deg, rgba(20,15,8,0.72) 0%, rgba(20,15,8,0.30) 55%, transparent 100%), linear-gradient(180deg, rgba(28,46,34,0.35) 0%, rgba(28,46,34,0.30) 45%, rgba(20,15,8,0.88) 100%)",
+          }}
+        />
         <div
           id="sunGlow"
           style={{
@@ -126,27 +143,13 @@ export default async function HomePage() {
             maxWidth: 760,
             maxHeight: 760,
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(184,134,59,0.22) 0%, rgba(184,134,59,0.06) 45%, transparent 70%)",
+            zIndex: 1,
+            background: "radial-gradient(circle, rgba(184,134,59,0.28) 0%, rgba(184,134,59,0.08) 45%, transparent 70%)",
             animation: "glowPulse 7s ease-in-out infinite",
             pointerEvents: "none",
+            mixBlendMode: "screen",
           }}
         />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-20%",
-            left: "-10%",
-            width: "55vw",
-            height: "55vw",
-            maxWidth: 640,
-            maxHeight: 640,
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(45,74,52,0.10) 0%, transparent 68%)",
-            animation: "drift 22s ease-in-out infinite",
-            pointerEvents: "none",
-          }}
-        />
-        <HeroFoliage />
         <canvas id="heroCanvas" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 1, pointerEvents: "none" }} />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1500, margin: "0 auto", width: "100%" }}>
@@ -157,11 +160,11 @@ export default async function HomePage() {
           <h1
             id="heroType"
             className="serif"
-            style={{ fontWeight: 300, fontSize: "clamp(52px,10.5vw,190px)", lineHeight: 0.92, letterSpacing: "-0.04em", color: "var(--canopy)" }}
+            style={{ fontWeight: 300, fontSize: "clamp(52px,10.5vw,190px)", lineHeight: 0.92, letterSpacing: "-0.04em", color: "var(--sand)", textShadow: "0 2px 40px rgba(20,15,8,0.45)" }}
           >
             <span className="hl" style={{ display: "block" }}>{home?.heroLine1 ?? "Native to"}</span>
             <span className="hl" style={{ display: "block" }}>
-              <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--bark)" }}>{home?.heroLine1Accent ?? "the canopy."}</em>
+              <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--gold-soft)" }}>{home?.heroLine1Accent ?? "the canopy."}</em>
             </span>
             <span className="hl" data-p="1" style={{ display: "block", paddingLeft: "0.12em" }}>{home?.heroLine2 ?? "Built for"}</span>
             <span className="hl" data-p="1" style={{ display: "block", paddingLeft: "0.12em" }}>
@@ -170,7 +173,7 @@ export default async function HomePage() {
           </h1>
 
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 32, marginTop: 56 }}>
-            <p style={{ fontSize: "clamp(15px,1.4vw,18px)", lineHeight: 1.7, color: "var(--grey)", maxWidth: 440 }}>
+            <p style={{ fontSize: "clamp(15px,1.4vw,18px)", lineHeight: 1.7, color: "rgba(242,236,221,0.82)", maxWidth: 440 }}>
               {home?.heroSubtitle}
             </p>
             <a
@@ -183,11 +186,12 @@ export default async function HomePage() {
                 fontSize: 12,
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "var(--sand)",
-                background: "var(--canopy)",
+                color: "var(--canopy-deep)",
+                background: "var(--gold)",
                 padding: "20px 32px",
                 borderRadius: 100,
                 whiteSpace: "nowrap",
+                boxShadow: "0 12px 40px rgba(184,134,59,0.35)",
                 transition: "transform .3s cubic-bezier(.19,1,.22,1)",
               }}
             >
@@ -196,9 +200,9 @@ export default async function HomePage() {
           </div>
         </div>
 
-        <div style={{ position: "absolute", bottom: 32, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 10, opacity: 0.45 }}>
+        <div style={{ position: "absolute", bottom: 32, left: "50%", transform: "translateX(-50%)", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 10, opacity: 0.55, color: "var(--sand)" }}>
           <span className="mono" style={{ fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase" }}>Descend</span>
-          <div style={{ width: 1, height: 40, background: "linear-gradient(var(--canopy),transparent)" }} />
+          <div style={{ width: 1, height: 40, background: "linear-gradient(var(--sand),transparent)" }} />
         </div>
       </section>
 
