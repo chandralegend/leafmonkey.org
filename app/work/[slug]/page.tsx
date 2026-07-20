@@ -7,6 +7,8 @@ import MarkdocContent from "@/components/MarkdocContent";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import InnerFx from "@/components/InnerFx";
+import JsonLd from "@/components/JsonLd";
+import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from "@/lib/site";
 
 export async function generateStaticParams() {
   const products = await getProducts();
@@ -21,9 +23,20 @@ export async function generateMetadata({
   const { slug } = await params;
   const product = await getProduct(slug);
   if (!product) return {};
+  const url = `/work/${slug}`;
+  const description = product.overview || product.description || undefined;
   return {
     title: `${product.name} — Case Study`,
-    description: product.overview || product.description || undefined,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "website",
+      url,
+      title: `${product.name} — Case Study`,
+      description,
+      ...(product.cover ? { images: [product.cover] } : {}),
+    },
+    twitter: { card: "summary_large_image", title: `${product.name} — Case Study`, description },
   };
 }
 
@@ -49,8 +62,22 @@ export default async function CaseStudyPage({
   const stats = product.stats ?? [];
   const gallery = product.gallery ?? [];
 
+  const productLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: product.name,
+    applicationCategory: product.category,
+    description: product.description || product.overview || undefined,
+    url: `${SITE_URL}/work/${slug}`,
+    image: product.cover ? `${SITE_URL}${product.cover}` : DEFAULT_OG_IMAGE,
+    author: { "@type": "Organization", name: SITE_NAME },
+    publisher: { "@type": "Organization", name: SITE_NAME },
+    inLanguage: "en",
+  };
+
   return (
     <>
+      <JsonLd data={productLd} />
       <SiteNav active="work" />
       <InnerFx />
 

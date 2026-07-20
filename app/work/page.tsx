@@ -7,10 +7,20 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import InnerFx from "@/components/InnerFx";
 
+const WORK_DESC =
+  "Research-grade products we've built and shipped, plus the transformation and research engagements that don't fit in an app store.";
+
 export const metadata: Metadata = {
   title: "Work",
-  description:
-    "Research-grade products we've built and shipped, plus the transformation and research engagements that don't fit in an app store.",
+  description: WORK_DESC,
+  alternates: { canonical: "/work" },
+  openGraph: {
+    type: "website",
+    url: "/work",
+    title: "Work — Leaf Monkey Labs",
+    description: WORK_DESC,
+  },
+  twitter: { card: "summary_large_image", title: "Work — Leaf Monkey Labs", description: WORK_DESC },
 };
 
 const ENGAGEMENTS = [

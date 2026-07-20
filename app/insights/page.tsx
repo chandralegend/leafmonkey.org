@@ -6,10 +6,20 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import InnerFx from "@/components/InnerFx";
 
+const INSIGHTS_DESC =
+  "Field notes on research-grade engineering, AI-native product design, and building software that's proudly, specifically Sri Lankan.";
+
 export const metadata: Metadata = {
   title: "Insights",
-  description:
-    "Field notes on research-grade engineering, AI-native product design, and building software that's proudly, specifically Sri Lankan.",
+  description: INSIGHTS_DESC,
+  alternates: { canonical: "/insights" },
+  openGraph: {
+    type: "website",
+    url: "/insights",
+    title: "Insights — Leaf Monkey Labs",
+    description: INSIGHTS_DESC,
+  },
+  twitter: { card: "summary_large_image", title: "Insights — Leaf Monkey Labs", description: INSIGHTS_DESC },
 };
 
 export default async function InsightsPage() {

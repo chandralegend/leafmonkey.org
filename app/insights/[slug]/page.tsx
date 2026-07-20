@@ -7,6 +7,8 @@ import MarkdocContent from "@/components/MarkdocContent";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import InnerFx from "@/components/InnerFx";
+import JsonLd from "@/components/JsonLd";
+import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from "@/lib/site";
 
 export async function generateStaticParams() {
   const posts = await getPosts();
@@ -21,7 +23,24 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return {};
-  return { title: post.title, description: post.excerpt || undefined };
+  const url = `/insights/${slug}`;
+  const description = post.excerpt || undefined;
+  return {
+    title: post.title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title: post.title,
+      description,
+      publishedTime: post.publishedDate || undefined,
+      authors: [post.author || SITE_NAME],
+      section: post.category,
+      ...(post.cover ? { images: [post.cover] } : {}),
+    },
+    twitter: { card: "summary_large_image", title: post.title, description },
+  };
 }
 
 export default async function BlogPostPage({
@@ -36,8 +55,25 @@ export default async function BlogPostPage({
   const settings = await getSettings();
   const { node } = post.content;
 
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt || undefined,
+    datePublished: post.publishedDate || undefined,
+    dateModified: post.publishedDate || undefined,
+    author: { "@type": "Organization", name: post.author || SITE_NAME },
+    publisher: { "@type": "Organization", name: SITE_NAME },
+    articleSection: post.category,
+    inLanguage: "en",
+    image: post.cover ? `${SITE_URL}${post.cover}` : DEFAULT_OG_IMAGE,
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/insights/${slug}` },
+    url: `${SITE_URL}/insights/${slug}`,
+  };
+
   return (
     <>
+      <JsonLd data={articleLd} />
       {/* reading progress */}
       <div id="progress" style={{ position: "fixed", top: 0, left: 0, height: 2, background: "var(--gold)", zIndex: 200, width: "0%" }} />
       <SiteNav active="insights" />

@@ -6,10 +6,20 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import InnerFx from "@/components/InnerFx";
 
+const ABOUT_DESC =
+  "A research-grounded software studio built in Sri Lanka — at home across legacy systems and greenfield AI, like the endemic purple-faced langur in the canopy.";
+
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "A research-grounded software studio built in Sri Lanka — at home across legacy systems and greenfield AI, like the endemic purple-faced langur in the canopy.",
+  description: ABOUT_DESC,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    type: "website",
+    url: "/about",
+    title: "About — Leaf Monkey Labs",
+    description: ABOUT_DESC,
+  },
+  twitter: { card: "summary_large_image", title: "About — Leaf Monkey Labs", description: ABOUT_DESC },
 };
 
 const VALUES = [
