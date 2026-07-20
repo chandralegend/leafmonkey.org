@@ -9,8 +9,8 @@ export default function SiteFooter({
   heading?: React.ReactNode;
   glow?: boolean;
 }) {
-  const email = settings?.email ?? "hello@leafmonkeylabs.com";
-  const url = settings?.url ?? "https://leafmonkeylabs.com";
+  const email = settings?.email ?? "hello@leafmonkey.org";
+  const url = settings?.url ?? "https://leafmonkey.org";
   const metaLines =
     settings?.metaLines && settings.metaLines.length
       ? settings.metaLines

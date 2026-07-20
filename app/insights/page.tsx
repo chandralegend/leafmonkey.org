@@ -29,7 +29,7 @@ export default async function InsightsPage() {
     getSettings(),
   ]);
   const grid = posts.filter((p) => p.slug !== featured?.slug);
-  const email = settings?.email ?? "hello@leafmonkeylabs.com";
+  const email = settings?.email ?? "hello@leafmonkey.org";
 
   return (
     <>

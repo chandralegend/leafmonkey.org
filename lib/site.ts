@@ -16,7 +16,7 @@ export const DEFAULT_DESCRIPTION =
 
 export const LOCALE = "en_US";
 
-export const SITE_EMAIL = "hello@leafmonkeylabs.com";
+export const SITE_EMAIL = "hello@leafmonkey.org";
 
 /** Stable absolute fallback image for structured data (JSON-LD). */
 export const DEFAULT_OG_IMAGE =

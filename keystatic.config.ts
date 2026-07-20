@@ -230,11 +230,11 @@ export default config({
       schema: {
         email: fields.text({
           label: "Contact email",
-          defaultValue: "hello@leafmonkeylabs.com",
+          defaultValue: "hello@leafmonkey.org",
         }),
         url: fields.text({
           label: "Website URL",
-          defaultValue: "https://leafmonkeylabs.com",
+          defaultValue: "https://leafmonkey.org",
         }),
         location: fields.text({ label: "Location", defaultValue: "Colombo, Sri Lanka" }),
         tagline: fields.text({

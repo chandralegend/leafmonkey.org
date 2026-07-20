@@ -19,7 +19,7 @@ export default async function HomePage() {
     getSettings(),
   ]);
 
-  const email = settings?.email ?? "hello@leafmonkeylabs.com";
+  const email = settings?.email ?? "hello@leafmonkey.org";
   const services = home?.services ?? [];
   const venues = home?.venues ?? [];
   const cases = products.slice(0, 3);
@@ -412,8 +412,8 @@ export default async function HomePage() {
           <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 40, alignItems: "flex-end", borderTop: "1px solid rgba(242,236,221,0.15)", paddingTop: 48 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <a href={`mailto:${email}`} className="serif mag" style={{ fontSize: "clamp(24px,3vw,42px)", fontWeight: 300, color: "var(--sand)", display: "inline-block", transition: "transform .35s cubic-bezier(.19,1,.22,1)", transformOrigin: "left" }}>{email}</a>
-              <a href={settings?.url ?? "https://leafmonkeylabs.com"} className="mono navlink" style={{ fontSize: 13, letterSpacing: "0.1em", color: "rgba(242,236,221,0.6)", width: "fit-content" }}>
-                {(settings?.url ?? "leafmonkeylabs.com").replace(/^https?:\/\//, "")} ↗
+              <a href={settings?.url ?? "https://leafmonkey.org"} className="mono navlink" style={{ fontSize: 13, letterSpacing: "0.1em", color: "rgba(242,236,221,0.6)", width: "fit-content" }}>
+                {(settings?.url ?? "leafmonkey.org").replace(/^https?:\/\//, "")} ↗
               </a>
             </div>
             <div className="mono" style={{ textAlign: "right", fontSize: 12, letterSpacing: "0.08em", color: "rgba(242,236,221,0.5)", lineHeight: 2 }}>
