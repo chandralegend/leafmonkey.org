@@ -4,7 +4,7 @@
  * entries, and Open Graph image URLs are absolute and correct.
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://leafmonkeylabs.com"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://leafmonkey.org"
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "Leaf Monkey Labs";
